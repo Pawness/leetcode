@@ -2,5 +2,4 @@ LeetCode Problems.
 
 Topics:
 
-1) Arrays
-    A) Two Pointers
+1) Two Pointers
