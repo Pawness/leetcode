@@ -3,5 +3,7 @@ This repository consists of the problems that I have solved on leetcode. I have 
 **Topics:**
 
 Two Pointers
+
 Stack
+
 Sorting
