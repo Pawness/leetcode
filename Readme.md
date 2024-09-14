@@ -1,5 +1,7 @@
-LeetCode Problems.
+This repository consists of the problems that I have solved on leetcode. I have saved these problems topic wise.
 
-Topics:
+**Topics:**
 
-1) Two Pointers
+Two Pointers
+Stack
+Sorting
