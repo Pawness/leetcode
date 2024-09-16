@@ -10,7 +10,7 @@ class Solution
 {
     public static void Main(String[] args)
     {
-        new Solution().SendTheObject(new selectionSort());
+        new Solution().SendTheObject(new _27RemoveElement());
     }
 
     public void SendTheObject(RunThisCode run)

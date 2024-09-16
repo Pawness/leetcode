@@ -10,7 +10,7 @@ namespace leetcode.src.TwoPointers
     {
         public override void RunTheCode()
         {
-            Console.WriteLine(RemoveElement(new int[] { 3, 2, 2, 3 } , 3));
+            Console.WriteLine(RemoveElement(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 } , 3));
         }
 
         private int RemoveElement(int[] nums, int val)
@@ -27,7 +27,7 @@ namespace leetcode.src.TwoPointers
                     count++;
                     nums[start] = '_';
                 }
-                else if (nums[end] == val)
+                if (nums[end] == val)
                 {
                     count++;
                     nums[end] = '_';
@@ -36,14 +36,46 @@ namespace leetcode.src.TwoPointers
                 start++; end--;
             }
 
-            //nums = Sort(nums);
+            nums = quickSort(nums , 0 , nums.Length - 1);
 
             return nums.Length - 1 - count;
         }
 
-        //public int[] Sort(int[] nums)
-        //{
-        //    ;
-        //}
+        private int[] quickSort(int[] nums, int v1, int v2)
+        {
+            if(v1 < v2)
+            {
+                int pIndex = partitioning(nums, v1, v2);
+
+                quickSort(nums, v1, pIndex - 1);
+                quickSort(nums, pIndex + 1, v2);
+            }
+            return nums;
+        }
+
+        private int partitioning(int[] arr, int v1, int v2)
+        {
+            int pivot = arr[v2];
+
+            int j = v1 - 1;
+
+            for(int i = v1; i < v2; i++)
+            {
+                if (arr[i] < pivot)
+                {
+                    j++;
+                    swap(arr, j, i);
+                }
+            }
+            swap(arr, j + 1, v2);
+            return j + 1;
+        }
+
+        private void swap(int[] arr, int j, int i)
+        {
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
     }
 }
